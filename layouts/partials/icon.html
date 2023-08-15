@@ -3,6 +3,20 @@
   <title>{{ .title | default .name }}</title>
   {{ safeHTML (index .ctx.Site.Data.m10c.icons .name) }}
 </svg>
+{{- else if fileExists (printf "static/icons/%s.svg" .name) -}}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="icon icon-{{ .name }}">
+  <title>{{ .title | default .name}}</title>
+  <g>
+    {{ printf "static/icons/%s.svg" .name | readFile | safeHTML }}
+  </g>
+</svg>
+{{- else if fileExists (printf "static/icons/%s-fill.svg" .name) -}}
+<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" class="icon icon-{{ .name }} icon-filled">
+  <title>{{ .title | default .name}}</title>
+  <g>
+  {{ printf "static/icons/%s-fill.svg" .name | readFile | safeHTML }}
+  </g>
+</svg>
 {{- else -}}
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
