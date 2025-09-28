@@ -1,8 +1,5 @@
 {{- if isset .ctx.Site.Data.m10c.icons .name -}}
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-{{ .name }}">
-  <title>{{ .title | default .name }}</title>
   {{ safeHTML (index .ctx.Site.Data.m10c.icons .name) }}
-</svg>
 {{- else if fileExists (printf "static/icons/%s.svg" .name) -}}
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="icon icon-{{ .name }}">
   <title>{{ .title | default .name}}</title>
