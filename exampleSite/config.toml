@@ -57,9 +57,9 @@ theme = "hugo-theme-m10c"
   #   primary_color = "#dad865"
 
   # Red theme
-  # [params.style]
-  #   darkest_color = "#d35050"
-  #   dark_color = "#212121"
-  #   light_color = "#d6d6d6"
-  #   lightest_color = "#d3d3d3"
-  #   primary_color = "#ffffff"
+  [params.style]
+    darkest_color = "#d35050"
+    dark_color = "#212121"
+    light_color = "#d6d6d6"
+    lightest_color = "#d3d3d3"
+    primary_color = "#ffffff"
